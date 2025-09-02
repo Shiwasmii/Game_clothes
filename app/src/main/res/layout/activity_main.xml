@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Zona del personaje con capas superpuestas -->
+    <FrameLayout
+        android:id="@+id/flCharacter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/panelDescargas"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintVertical_weight="1">
+
+        <ImageView
+            android:id="@+id/ivBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="Cuerpo"
+            app:srcCompat="@drawable/body" />
+
+        <ImageView
+            android:id="@+id/ivPants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:contentDescription="Pantalón"
+            app:srcCompat="@drawable/pants" />
+
+        <ImageView
+            android:id="@+id/ivTshirt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:contentDescription="Polera"
+            app:srcCompat="@drawable/tshirt" />
+
+        <ImageView
+            android:id="@+id/ivShoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:contentDescription="Zapatos"
+            app:srcCompat="@drawable/shoes" />
+
+    </FrameLayout>
+
+    <!-- Panel de descargas a la derecha -->
+    <LinearLayout
+        android:id="@+id/panelDescargas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="top"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/flCharacter"
+        app:layout_constraintHorizontal_weight="1">
+
+        <!-- Descarga Polera -->
+        <ProgressBar
+            android:id="@+id/progTshirt"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:max="100"
+            android:indeterminateOnly="false"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_circular"
+            android:progress="0" />
+        <TextView
+            android:id="@+id/tvEstadoTshirt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listo para descargar"
+            android:textSize="12sp" />
+        <Button
+            android:id="@+id/btnDescargarTshirt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="Descargar polera" />
+
+        <!-- Descarga Pantalón -->
+        <ProgressBar
+            android:id="@+id/progPants"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:max="100"
+            android:indeterminateOnly="false"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_circular"
+            android:progress="0" />
+        <TextView
+            android:id="@+id/tvEstadoPants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listo para descargar"
+            android:textSize="12sp" />
+        <Button
+            android:id="@+id/btnDescargarPants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="Descargar pantalón" />
+
+        <!-- Descarga Zapatos -->
+        <ProgressBar
+            android:id="@+id/progShoes"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:max="100"
+            android:indeterminateOnly="false"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_circular"
+            android:progress="0" />
+        <TextView
+            android:id="@+id/tvEstadoShoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listo para descargar"
+            android:textSize="12sp" />
+        <Button
+            android:id="@+id/btnDescargarShoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="Descargar zapatos" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
